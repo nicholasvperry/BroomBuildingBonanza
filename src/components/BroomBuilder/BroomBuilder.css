@@ -1,0 +1,140 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.header{
+    text-align: center;
+}
+
+
+.broomBuilderContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.broomOptions {
+    width: 30%;
+    
+}
+
+.broomImage {
+    width: 50%;
+}
+
+.WoodType {
+    width: 80%;   
+    height: 15px;
+    text-align: center;
+   
+}
+
+.WoodColor {
+    width: 80%;    
+    height: 15px;
+    text-align: center;
+    
+}
+
+.TailType {
+    width: 80%;    
+    height: 15px;
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    margin: 20px;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.productCard {
+    border: groove;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.woodColorCards {
+    flex: 1 1 0px
+}
+
+.woodTypeCards {
+    flex: 1 1 0px 
+}
+
+.tailTypesCards {
+    flex: 1 1 0px
+}
+
+.allProjects {
+    text-align: center;
+}
+.myProjectCardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.projectCards{
+    padding: 15px;
+    border-style: solid;
+    border-radius: 15px;
+    
+}
+
+.openProjectCardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.openProjectCards {
+    padding: 15px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+
+.slide img {
+    width: 7rem;
+    margin: 0 auto;
+}
+
+.slide {
+    transform: scale(0.2);
+    transition: transform 300ms;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.activeSlide {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.arrow {
+    background-color: aliceblue;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow svg {
+    transition: color 300ms;
+}
+
+.arrow svg:hover {
+    color: #68edff;
+}
+
+.next {
+    right: 0%;
+    top: 50%;
+}
+
+.prev {
+    left: 0%;
+    top: 50%;
+}
+
