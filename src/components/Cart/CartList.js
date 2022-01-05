@@ -4,6 +4,7 @@ import { OrderContext } from "../Orders/OrderProvider";
 import { TailTypeContext } from "../TailType/TailTypeProvider";
 import { WoodColorContext } from "../WoodColor/WoodColorProvider";
 import { WoodTypeContext } from "../WoodType/WoodTypeProvider";
+import { useNavigate } from "react-router";
 
 export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
   //Givee access to components needed
@@ -11,6 +12,8 @@ export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
   const {tailTypes, getTailTypes} = useContext(TailTypeContext)
   const {woodColors, getWoodColors} = useContext(WoodColorContext)
   const {woodTypes, getWoodTypes} = useContext(WoodTypeContext)
+
+  const navigate = useNavigate()
 
   //make timstamp
   const currentTimestamp = Date.now()
@@ -76,6 +79,7 @@ export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
       "adminUserId": 0,
       "orderDate": currentTimestamp
     })
+    .then(() => navigate(`/orders`))
   }
 
   

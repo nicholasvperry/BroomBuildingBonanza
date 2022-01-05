@@ -30,7 +30,8 @@ export const Register = (props) => {
                         },
                         body: JSON.stringify({
                             email: email.current.value,
-                            username: username.current.value
+                            username: username.current.value,
+                            admin: false
                         })
                     })
                         .then(res => res.json())
@@ -39,6 +40,7 @@ export const Register = (props) => {
                                 localStorage.setItem("activeUser", createdUser.id)
                                 localStorage.setItem("activeEmail", createdUser.email)
                                 localStorage.setItem("activeUserName", createdUser.username)
+                                localStorage.setItem("admin", createdUser.admin)
                                 props.setLoggedin(true)
                                 navigate("/")
                             }

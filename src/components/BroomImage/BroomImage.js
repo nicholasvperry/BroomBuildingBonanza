@@ -14,11 +14,11 @@ import { Suspense } from 'react/cjs/react.production.min'
 import { OrbitControls } from '@react-three/drei'
 
 //useFrame rotates the broom automatically
-//scale is the image side
+//scale is the image size
 
 const BroomImage = ({ ...props }) => {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/pictures/BroomStick2/broomstick2.glb')
+  const { nodes, materials } = useGLTF('/pictures/BroomSticks/broomstick2.glb')
   useFrame(() => {
     group.current.rotation.y += 0.01
   })
@@ -28,27 +28,11 @@ const BroomImage = ({ ...props }) => {
         geometry={nodes.MainStick.geometry}
         material={materials['lambert2.001']}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.3}
+        scale={0.25}
       />
     </group>
   )
 }
-// export default function Model({ ...props }) {
-//   const group = useRef()
-//   const { nodes, materials } = useGLTF('/pictures/BroomStick2/broomstick2.glb')
-//   return (
-//     <group ref={group} {...props} dispose={null}>
-//       <mesh
-//         geometry={nodes.MainStick.geometry}
-//         material={materials['lambert2.001']}
-//         rotation={[Math.PI / 2, 0, 0]}
-//         scale={0.28}
-//       />
-//     </group>
-//   )
-// }
-
-
 
 export const FinishedImage = () => {
   return (
@@ -65,4 +49,4 @@ export const FinishedImage = () => {
 }
 
 
-useGLTF.preload('/pictures/BroomStick2/broomstick2.glb')
+useGLTF.preload('/pictures/BroomStick/broomstick2.glb')

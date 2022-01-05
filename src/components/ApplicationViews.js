@@ -18,6 +18,8 @@ import { WoodTypesProvider } from "./WoodType/WoodTypeProvider";
 import { WoodColorForm } from "./WoodColor/WoodColorForm";
 import { WoodTypeForm } from "./WoodType/WoodTypeForm";
 import { OrderList } from "./Orders/OrderList";
+import { OakFireBroom } from "./BroomImage/OakFireBroom";
+import { TestModel } from "./BroomImage/TestImage";
 
 
 
@@ -66,7 +68,7 @@ export const ApplicationViews = () => {
       <Route exact path="/woodcolors/create/*" element={<WoodColorForm />} />
       
       {/* Render the woodcolorForm page when http://localhost:3000/woodcolors/create */}
-      <Route exact path="/woodcolors/edit/:woodcolorId/*" element={<WoodColorForm />} />
+      <Route exact path="/woodcolors/edit/:woodColorId/*" element={<WoodColorForm />} />
       
       
       {/* Render the orders page when http://localhost:3000/orders */}

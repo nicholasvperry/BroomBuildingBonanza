@@ -35,14 +35,14 @@ export const Login = (props) => {
     }
 
     return (
-        <main className="container--login">
+        <main className="login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
             </dialog>
 
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
+            <section className="loginPage">
+                <form className="login" onSubmit={handleLogin}>
                     <h1>Nearly Headless's Broom Building Bonanza</h1>
                     
                     <fieldset>

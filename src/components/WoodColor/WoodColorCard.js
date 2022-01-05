@@ -10,7 +10,7 @@ export const WoodColorCard = ({woodColor}) => {
     
     const {woodColorId} = useParams()
     const navigate = useNavigate()
-
+    console.log(woodColorId)
     //Get woodColor info
     useEffect(() => {
         console.log("useEffect", woodColorId)
