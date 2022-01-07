@@ -17,7 +17,7 @@ import { WoodTypesProvider } from "./WoodType/WoodTypeProvider";
 import { WoodColorForm } from "./WoodColor/WoodColorForm";
 import { WoodTypeForm } from "./WoodType/WoodTypeForm";
 import { OrderList } from "./Orders/OrderList";
-import { CherryBirch } from "./BroomImages/CherryBirch";
+import { CherryBirchBroom } from "./BroomImages/CherryBroomImages/CherryBirch";
 
 
 
@@ -42,7 +42,7 @@ export const ApplicationViews = () => {
       <Route exact path="/" element={<BroomBuilder />} />
       
       {/* Render the home page when http://localhost:3000/ */}
-      <Route exact path="/woodtype" element={<CherryBirch />} />
+      <Route exact path="/woodtype" element={<CherryBirchBroom />} />
       
       {/* Render the projects page when http://localhost:3000/projects */}
       <Route exact path="/projects" element={<AdminList />} />

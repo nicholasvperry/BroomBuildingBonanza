@@ -7,7 +7,22 @@ import { WoodType } from "../WoodType/WoodType"
 import { WoodColor } from "../WoodColor/WoodColor"
 import { TailType } from "../TailType/TailType"
 import { Cart } from "../Cart/CartList"
-import { CherryBirch } from "../BroomImages/CherryBirch"
+import { CherryBirchBroom } from "../BroomImages/CherryBroomImages/CherryBirch"
+import { CherryFireBroom } from "../BroomImages/CherryBroomImages/CherryFireBroom"
+import { CherryLightningBroom } from "../BroomImages/CherryBroomImages/CherryLightning"
+import { CherryStarBroom } from "../BroomImages/CherryBroomImages/CherryStar"
+import { EbonyBirchBroom } from "../BroomImages/EbonyBroomImages/EbonyBirch"
+import { EbonyFireBroom } from "../BroomImages/EbonyBroomImages/EbonyFire"
+import { EbonyLightningBroom } from "../BroomImages/EbonyBroomImages/EbonyLightning"
+import { EbonyStarBroom } from "../BroomImages/EbonyBroomImages/EbonyStar"
+import { GoldBirchBroom } from "../BroomImages/GoldBroomImages/GoldBirch"
+import { GoldFireBroom } from "../BroomImages/GoldBroomImages/GoldFire"
+import { GoldLightningBroom } from "../BroomImages/GoldBroomImages/GoldLightning"
+import { GoldStarBroom } from "../BroomImages/GoldBroomImages/GoldStar"
+import { PinkBirchBroom } from "../BroomImages/PinkBroomImages/PinkBirch"
+import { PinkFireBroom } from "../BroomImages/PinkBroomImages/PinkFire"
+import { PinkLightningBroom } from "../BroomImages/PinkBroomImages/PinkLightning"
+import { PinkStarBroom } from "../BroomImages/PinkBroomImages/PinkStar"
 
 
 
@@ -28,9 +43,6 @@ export const BroomBuilder = () => {
     })
 
    
-
-
-
     return (
         <>
         <h1 className="header">Nearly Headless Nick's Broom Building Bonanza</h1><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
@@ -40,12 +52,33 @@ export const BroomBuilder = () => {
            <div className="woodColor"><WoodColor setColorForCart={setColorForCart} /></div><br></br><br></br><br></br><br></br><br></br>
            <div className="tailType"><TailType setTailTypeForCart={setTailTypeForCart} /></div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         </div>
+        
 
-        <div className="broomImage"><CherryBirch /></div>
+        <div className="broomImage">
+        {colorForCart === 1 && tailTypeForCart === 1 && <CherryBirchBroom />}
+        {colorForCart === 1 && tailTypeForCart === 2 && <CherryStarBroom />}
+        {colorForCart === 1 && tailTypeForCart === 3 && <CherryFireBroom />}
+        {colorForCart === 1 && tailTypeForCart === 4 && <CherryLightningBroom />}
+        {colorForCart === 2 && tailTypeForCart === 1 && <EbonyBirchBroom />}
+        {colorForCart === 2 && tailTypeForCart === 2 && <EbonyStarBroom />}
+        {colorForCart === 2 && tailTypeForCart === 3 && <EbonyFireBroom />}
+        {colorForCart === 2 && tailTypeForCart === 4 && <EbonyLightningBroom />}
+        {colorForCart === 3 && tailTypeForCart === 1 && <PinkBirchBroom />}
+        {colorForCart === 3 && tailTypeForCart === 2 && <PinkStarBroom />}
+        {colorForCart === 3 && tailTypeForCart === 3 && <PinkFireBroom />}
+        {colorForCart === 3 && tailTypeForCart === 4 && <PinkLightningBroom />}
+        {colorForCart === 4 && tailTypeForCart === 1 && <GoldBirchBroom />}
+        {colorForCart === 4 && tailTypeForCart === 2 && <GoldStarBroom />}
+        {colorForCart === 4 && tailTypeForCart === 3 && <GoldFireBroom />}
+        {colorForCart === 4 && tailTypeForCart === 4 && <GoldLightningBroom />}
+        </div>
+
         <div className="cart"><Cart  woodTypeForCart={woodTypeForCart} colorForCart={colorForCart} tailTypeForCart={tailTypeForCart}/></div>
         </div>
+
+        
         </>
-      )
+    )
 
 
 }

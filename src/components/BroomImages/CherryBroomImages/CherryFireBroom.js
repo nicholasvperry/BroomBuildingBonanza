@@ -5,12 +5,14 @@ import { Suspense } from 'react/cjs/react.production.min'
 import { OrbitControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-export const OakFireBroomHtml = ({ ...props }) => {
+export const BroomImageSettings = ({ ...props }) => {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/pictures/BroomSticks/oakfire.glb')
+  const { nodes, materials } = useGLTF('/pictures/cherryBroomSticks/cherryFire.glb')
   useFrame(() => {
     group.current.rotation.y += 0.01
   })
+
+  
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
@@ -23,14 +25,14 @@ export const OakFireBroomHtml = ({ ...props }) => {
   )
 }
 
-export const OakFireBroom = () => {
+export const CherryFireBroom = () => {
   return (
     <Canvas>
       <OrbitControls />
       <directionalLight intensity={0.5} />
       <ambientLight intensity={0.5} />
       <Suspense fallback={null}>
-        <OakFireBroomHtml />
+        <BroomImageSettings />
       </Suspense>
     </Canvas>
   )
@@ -38,4 +40,4 @@ export const OakFireBroom = () => {
 }
 
 
-useGLTF.preload('/pictures/BroomSticks/oakfire.glb')
+useGLTF.preload('/pictures/cherryBroomSticks/cherryFire.glb')
