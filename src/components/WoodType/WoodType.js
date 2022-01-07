@@ -7,6 +7,8 @@ import { WoodTypeContext } from "./WoodTypeProvider";
 
 
 
+
+
 export const WoodType = ({setWoodTypeForCart}) => {
 
   const {woodTypes, getWoodTypes} = useContext(WoodTypeContext)

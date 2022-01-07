@@ -85,8 +85,10 @@ export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
   
 
   return(
-    <section>
+    <section className="cart">
+      <div className="cartItems">
       <h2>Cart</h2>
+        
         <div className="cartWoodType">Wood Type: {woodTypeMap?.name}
         </div>
 
@@ -108,6 +110,7 @@ export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
           event.preventDefault()
           handleOrderBroom()
         }}>Purchase</button>
+        </div>
     </section>
   )
 }

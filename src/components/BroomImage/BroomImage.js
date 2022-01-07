@@ -18,7 +18,7 @@ import { OrbitControls } from '@react-three/drei'
 
 const BroomImage = ({ ...props }) => {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/pictures/BroomSticks/broomstick2.glb')
+  const { nodes, materials } = useGLTF('/pictures/cherryBroomSticks/cherryBirch.glb')
   useFrame(() => {
     group.current.rotation.y += 0.01
   })
@@ -49,4 +49,4 @@ export const FinishedImage = () => {
 }
 
 
-useGLTF.preload('/pictures/BroomStick/broomstick2.glb')
+useGLTF.preload('/pictures/cherryBroomSticks/cherryBirch.glb')

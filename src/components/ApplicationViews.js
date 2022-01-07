@@ -23,6 +23,7 @@ import { TestModel } from "./BroomImage/TestImage";
 
 
 
+
 //ApplicationViews renders the function based on the web address
 export const ApplicationViews = () => {
 
@@ -41,7 +42,7 @@ export const ApplicationViews = () => {
       <Route exact path="/" element={<BroomBuilder />} />
       
       {/* Render the home page when http://localhost:3000/ */}
-      <Route exact path="/woodtype" element={<FinishedImage />} />
+      <Route exact path="/woodtype" element={<OakFireBroom />} />
       
       {/* Render the projects page when http://localhost:3000/projects */}
       <Route exact path="/projects" element={<AdminList />} />

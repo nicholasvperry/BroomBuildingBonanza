@@ -27,6 +27,7 @@ body {
     font-family: Harry;
     color: rgb(250, 227, 18);
     
+    
 }
   
 body:before {
@@ -38,7 +39,7 @@ body:before {
     height: 100vh;  
     opacity: 1; 
     z-index: -1;
-    background: url("../public/backgrounds/dust.gif");
+    background-image: url("../public/backgrounds/dust.gif");
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -145,6 +146,12 @@ button {
     background: rgba(0, 0, 0, 0.7)    
 }
 
+.cartItems {
+    border-style: solid;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px; 
+}
 
 .openProjectCardsContainer{
     display: flex;

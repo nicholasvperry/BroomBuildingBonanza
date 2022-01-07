@@ -43,7 +43,7 @@ export const Login = (props) => {
 
             <section className="loginPage">
                 <form className="login" onSubmit={handleLogin}>
-                    <h1>Nearly Headless's Broom Building Bonanza</h1>
+                    <h1>Nearly Headless Nick's Broom Building Bonanza</h1>
                     
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
