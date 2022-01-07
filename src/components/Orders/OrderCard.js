@@ -48,7 +48,7 @@ export const OrderCard = ({ order }) => {
     let editButton = ""
 
     if (order.statusId === 7 || order.statusId === 6) {
-        editButton = <button disabled={true} className="button" onClick={handleEditNote}>Edit Note</button>
+        editButton = ""
     } else {
         editButton = <button className="button" onClick={handleEditNote}>Edit Note</button>
     }

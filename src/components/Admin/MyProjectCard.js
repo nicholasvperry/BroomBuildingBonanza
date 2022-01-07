@@ -59,7 +59,7 @@ export const MyProjectCard = ({order}) => {
       onEsc={() => setShow(false)}
       onClickOutside={() => setShow(false)}>
       
-      <fieldset>
+      <fieldset className="updateModal">
     <div className="status">
       <label htmlFor="status">Status: {order.status.name}</label><br></br>
       <select onChange={e=> {

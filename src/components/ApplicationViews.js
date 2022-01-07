@@ -2,7 +2,6 @@ import React from "react"
 import { Route, Routes } from "react-router-dom";
 import { AdminList } from "./Admin/AdminList";
 import { BroomBuilder } from "./BroomBuilder/BroomBuilder";
-import { FinishedImage } from "./BroomImage/BroomImage";
 import { NotesProvider } from "./Notes/NoteProvider";
 import { OrdersProvider } from "./Orders/OrderProvider";
 import { ProductList } from "./Products/ProductList";
@@ -18,8 +17,9 @@ import { WoodTypesProvider } from "./WoodType/WoodTypeProvider";
 import { WoodColorForm } from "./WoodColor/WoodColorForm";
 import { WoodTypeForm } from "./WoodType/WoodTypeForm";
 import { OrderList } from "./Orders/OrderList";
-import { OakFireBroom } from "./BroomImage/OakFireBroom";
-import { TestModel } from "./BroomImage/TestImage";
+import { CherryBirch } from "./BroomImages/CherryBirch";
+
+
 
 
 
@@ -42,7 +42,7 @@ export const ApplicationViews = () => {
       <Route exact path="/" element={<BroomBuilder />} />
       
       {/* Render the home page when http://localhost:3000/ */}
-      <Route exact path="/woodtype" element={<OakFireBroom />} />
+      <Route exact path="/woodtype" element={<CherryBirch />} />
       
       {/* Render the projects page when http://localhost:3000/projects */}
       <Route exact path="/projects" element={<AdminList />} />

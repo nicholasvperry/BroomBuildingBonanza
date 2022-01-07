@@ -7,7 +7,7 @@ import { WoodType } from "../WoodType/WoodType"
 import { WoodColor } from "../WoodColor/WoodColor"
 import { TailType } from "../TailType/TailType"
 import { Cart } from "../Cart/CartList"
-import { FinishedImage } from "../BroomImage/BroomImage"
+import { CherryBirch } from "../BroomImages/CherryBirch"
 
 
 
@@ -41,7 +41,7 @@ export const BroomBuilder = () => {
            <div className="tailType"><TailType setTailTypeForCart={setTailTypeForCart} /></div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         </div>
 
-        <div className="broomImage"><FinishedImage /></div>
+        <div className="broomImage"><CherryBirch /></div>
         <div className="cart"><Cart  woodTypeForCart={woodTypeForCart} colorForCart={colorForCart} tailTypeForCart={tailTypeForCart}/></div>
         </div>
         </>

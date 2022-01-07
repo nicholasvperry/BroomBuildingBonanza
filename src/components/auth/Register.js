@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
 export const Register = (props) => {
-    const username = useRef()
+    const name = useRef()
     const email = useRef()
     // eslint-disable-next-line
     const verifyPassword = useRef()
@@ -30,7 +30,7 @@ export const Register = (props) => {
                         },
                         body: JSON.stringify({
                             email: email.current.value,
-                            username: username.current.value,
+                            name: name.current.value,
                             admin: false
                         })
                     })
@@ -39,7 +39,7 @@ export const Register = (props) => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("activeUser", createdUser.id)
                                 localStorage.setItem("activeEmail", createdUser.email)
-                                localStorage.setItem("activeUserName", createdUser.username)
+                                localStorage.setItem("activename", createdUser.name)
                                 localStorage.setItem("admin", createdUser.admin)
                                 props.setLoggedin(true)
                                 navigate("/")
@@ -64,8 +64,8 @@ export const Register = (props) => {
             <form className="form--login" onSubmit={handleRegister}>
                 <h1 className="h3 mb-3 font-weight-normal">Please Register</h1>
                 <fieldset>
-                    <label htmlFor="username"> Username </label>
-                    <input ref={username} type="text" name="username" className="form-control" placeholder="Username" required autoFocus />
+                    <label htmlFor="name">Name</label>
+                    <input ref={name} type="text" name="Name" className="form-control" placeholder="Name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputEmail"> Email address </label>
