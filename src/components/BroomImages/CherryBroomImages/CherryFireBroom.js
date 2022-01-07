@@ -9,7 +9,7 @@ export const BroomImageSettings = ({ ...props }) => {
   const group = useRef()
   const { nodes, materials } = useGLTF('/pictures/cherryBroomSticks/cherryFire.glb')
   useFrame(() => {
-    group.current.rotation.y += 0.01
+    group.current.rotation.y -= 0.01
   })
 
   

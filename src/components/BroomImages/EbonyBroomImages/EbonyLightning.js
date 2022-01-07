@@ -11,7 +11,7 @@ const BroomImageSettings = ({ ...props }) => {
     const group = useRef()
     const { nodes, materials } = useGLTF('/pictures/ebonyBroomSticks/ebonyLightning.glb')
     useFrame(() => {
-        group.current.rotation.y += 0.01
+        group.current.rotation.y -= 0.01
       })
       return (
         <group ref={group} {...props} dispose={null}>

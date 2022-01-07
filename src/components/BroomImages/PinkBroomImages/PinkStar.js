@@ -12,7 +12,7 @@ const BroomImageSettings = ({ ...props }) => {
     const { nodes, materials } = useGLTF('/pictures/pinkBroomSticks/pinkStar.glb')
     //Rotate the image
     useFrame(() => {
-        group.current.rotation.y += 0.01
+        group.current.rotation.y -= 0.01
     })
     return (
     <group ref={group} {...props} dispose={null}>
