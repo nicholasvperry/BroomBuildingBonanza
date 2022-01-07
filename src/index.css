@@ -70,6 +70,7 @@ button {
 .broomBuilderContainer {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 50px;
 }
 
 

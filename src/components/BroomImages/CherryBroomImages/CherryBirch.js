@@ -34,7 +34,7 @@ const BroomImageSettings = ({ ...props }) => {
   )
 }
 
-export const CherryBirch = () => {
+export const CherryBirchBroom = () => {
   return (
     <Canvas>
       <OrbitControls />
