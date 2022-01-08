@@ -15,6 +15,7 @@ code {
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+/* add personal font. Has to be in public */
 @font-face {
     font-family: 'Harry';
     src: local('Harry'), url(../public/Font/HARRYP_.TTF) format('truetype');
@@ -22,7 +23,7 @@ code {
 
 /* Format the background image using the following two arguments */
 body {
-    position: relative;
+    position: absolute;
     z-index: 1;
     font-family: Harry;
     color: rgb(250, 227, 18);
@@ -34,19 +35,33 @@ body:before {
     content: " ";
     position: absolute;
     top: 0; 
-    left: 0;
-    width: 100vw; 
-    height: 100vh;  
+    left: 0;      
     opacity: 1; 
     z-index: -1;
     background-image: url("../public/backgrounds/dust.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    
+    width: 100vw; 
+    height: 100vh;
+}
+/* welcom is below broombuilder. index so I could fade it out */
+.welcome {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    padding-top: 40px;
 }
 
+
 .loginPage {
-  text-align: center;
+    text-align: center;
+    padding-left: 100px;
+}
+
+.login {
+    text-align: center;
+    
 }
 
 .link--register {
