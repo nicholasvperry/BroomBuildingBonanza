@@ -1,3 +1,5 @@
+//Purpose: Made different component for first login for splashscreen.
+
 import React, { useContext, useEffect, useState, useRef } from "react"
 import { TailTypeContext } from "../TailType/TailTypeProvider"
 import { WoodColorContext } from "../WoodColor/WoodColorProvider"
@@ -29,7 +31,7 @@ import {useSpring, animated, useChain} from "react-spring"
 import {motion} from "framer-motion"
 
 
-export const BroomBuilder = () => {
+export const BroomBuilderWelcome = () => {
     //import state from woodType    
     const [woodTypeForCart, setWoodTypeForCart] = useState({
         woodType: 0
@@ -49,8 +51,37 @@ export const BroomBuilder = () => {
    
     return (
         <>
-        
-        <div
+        <motion.div 
+        className="welcome"
+        initial={{opacity: 1}}
+        animate={{opacity: 1}}
+        transition={{duration: 5}}
+        >
+        <motion.div
+        initial={{opacity: 1}}
+        animate={{opacity: 0}}
+        transition={{duration: 1, delay: 5}}
+        >
+        <img  className="welcomeImage" src={welcome} alt="loading..." />
+        </motion.div>
+        </motion.div>
+
+        {/* <motion.div 
+        className="welcomeBackground"
+        initial={{opacity: 1}}
+        animate={{opacity: 1}}
+        transition={{duration: 5}}
+        >
+        <motion.div 
+        initial={{opacity: 1}}
+        animate={{opacity: 0}}
+        transition={{duration: 1, delay: 5}}
+        >
+        <img  className="welcomeBackgoundImage" src={welcome} alt="loading..." />
+        </motion.div>
+        </motion.div> */}
+
+        <motion.div
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         transition={{duration: 3, delay: 4}}
@@ -85,7 +116,7 @@ export const BroomBuilder = () => {
 
         <div className="cart"><Cart  woodTypeForCart={woodTypeForCart} colorForCart={colorForCart} tailTypeForCart={tailTypeForCart}/></div>
         </div>
-        </div>
+        </motion.div>
         
         
         </>

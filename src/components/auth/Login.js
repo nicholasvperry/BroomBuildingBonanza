@@ -1,3 +1,4 @@
+//Changed navigate to welcome for splash screen
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
@@ -27,7 +28,7 @@ export const Login = (props) => {
                     localStorage.setItem("activeEmail", exists.email)
                     localStorage.setItem("activeUserAdmin", exists.admin)
                     props.setLoggedin(true)
-                    navigate("/") // change to navigate("/")
+                    navigate("/welcome") // change to navigate("/")
                 } else {
                     existDialog.current.showModal()
                 }

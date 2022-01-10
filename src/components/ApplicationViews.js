@@ -18,6 +18,7 @@ import { WoodColorForm } from "./WoodColor/WoodColorForm";
 import { WoodTypeForm } from "./WoodType/WoodTypeForm";
 import { OrderList } from "./Orders/OrderList";
 import { CherryBirchBroom } from "./BroomImages/CherryBroomImages/CherryBirch";
+import { BroomBuilderWelcome } from "./BroomBuilder/BroomBuilderWelcome";
 
 
 
@@ -40,6 +41,9 @@ export const ApplicationViews = () => {
 
       {/* Render the home page when http://localhost:3000/ */}
       <Route exact path="/" element={<BroomBuilder />} />
+      
+      {/* Render the home page when http://localhost:3000/ */}
+      <Route exact path="/welcome" element={<BroomBuilderWelcome />} />
       
       {/* Render the home page when http://localhost:3000/ */}
       <Route exact path="/woodtype" element={<CherryBirchBroom />} />
