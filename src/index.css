@@ -98,11 +98,39 @@ button {
 
 .broomOptions {
     width: 30%;
-    
 }
 
+
 .broomImage {
+    width: 100%;
+    height: 100%;
+}
+
+/* Progress Bar */
+
+
+.progress {
+	background-color: #241f1f;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 20px;
+	width: 200px;
+}
+
+.progressBars{
+    align-self: center;
+    width: 10px;
+    height: 10px;    
+}
+.broomStats {
+    display: flex;
+    flex-direction: column;
     width: 50%;
+}
+
+.cart {
+
 }
 
 .WoodType {
@@ -292,4 +320,7 @@ button {
     left: 0%;
     top: 50%;
 }
+
+
+
 

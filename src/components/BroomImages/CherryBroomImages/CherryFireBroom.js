@@ -9,7 +9,7 @@ export const BroomImageSettings = ({ ...props }) => {
   const group = useRef()
   const { nodes, materials } = useGLTF('/pictures/cherryBroomSticks/cherryFire.glb')
   useFrame(() => {
-    group.current.rotation.y -= 0.01
+    group.current.rotation.y -= -0.01
   })
 
   
@@ -18,8 +18,9 @@ export const BroomImageSettings = ({ ...props }) => {
       <mesh
         geometry={nodes.MainStick.geometry}
         material={materials['lambert2.002']}
-        rotation={[1.64, 0.27, 5]}
-        scale={0.25}
+        rotation={[1.83, 0, 9]}
+        position={[0, -1.6, 0]}
+        scale={0.35}
       />
     </group>
   )
