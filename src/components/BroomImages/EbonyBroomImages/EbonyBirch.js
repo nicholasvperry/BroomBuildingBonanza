@@ -12,15 +12,16 @@ const BroomImageSettings = ({ ...props }) => {
     const { nodes, materials } = useGLTF('/pictures/ebonyBroomSticks/ebonyBirch.glb')
     //Make image rotate
     useFrame(() => {
-        group.current.rotation.y -= 0.01
+        group.current.rotation.y -= -0.01
       })
     return (
       <group ref={group} {...props} dispose={null}>
         <mesh
           geometry={nodes.MainStick.geometry}
           material={materials['lambert2.003']}
-          rotation={[2, 0.27, 5]}
-          scale={0.25}
+          rotation={[1.75, 0, 9]}
+          position={[0, -1.5, 0]}
+          scale={0.35}
         />
       </group>
     )

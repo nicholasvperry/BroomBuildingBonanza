@@ -4,7 +4,7 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { TailTypeContext } from "./TailTypeProvider";
 
 
-export const TailType = ({setTailTypeForCart}) => {
+export const TailType = ({setTailTypeForCart, woodTypeForCart, colorForCart, tailTypeForCart}) => {
 
   const {tailTypes, getTailTypes} = useContext(TailTypeContext)
   const [imageIndex, setImageIndex] = useState(0);

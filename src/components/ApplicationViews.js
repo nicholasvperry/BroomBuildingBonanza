@@ -25,6 +25,7 @@ import { BroomBuilderWelcome } from "./BroomBuilder/BroomBuilderWelcome";
 
 
 
+
 //ApplicationViews renders the function based on the web address
 export const ApplicationViews = () => {
 
@@ -46,7 +47,7 @@ export const ApplicationViews = () => {
       <Route exact path="/welcome" element={<BroomBuilderWelcome />} />
       
       {/* Render the home page when http://localhost:3000/ */}
-      <Route exact path="/woodtype" element={<CherryBirchBroom />} />
+      {/* <Route exact path="/woodtype" element={< />} /> */}
       
       {/* Render the projects page when http://localhost:3000/projects */}
       <Route exact path="/projects" element={<AdminList />} />

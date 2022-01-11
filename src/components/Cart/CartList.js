@@ -7,7 +7,7 @@ import { WoodTypeContext } from "../WoodType/WoodTypeProvider";
 import { useNavigate } from "react-router";
 
 export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
-  //Givee access to components needed
+  //Give access to components needed
   const {addOrder} = useContext(OrderContext)
   const {tailTypes, getTailTypes} = useContext(TailTypeContext)
   const {woodColors, getWoodColors} = useContext(WoodColorContext)
@@ -85,7 +85,7 @@ export const Cart = ({woodTypeForCart, colorForCart, tailTypeForCart}) => {
   
 
   return(
-    <section className="cart">
+    <section>
       <div className="cartItems">
       <h2>Cart</h2>
         
