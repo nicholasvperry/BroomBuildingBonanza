@@ -208,3 +208,28 @@ const handleEditNote = () => {
         
         
         }
+
+<div className="myOrderCardsContainer">{orders.filter(orders => +localStorage.activeUser === orders.userId).sort((a,b) => {return new Date(b.orderDate) - new Date(a.orderDate)}).map(order => {
+        return (
+        <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        className="projectCards"
+        onClick={() => (detailOpen ? close() : open())}>
+        <OrderCard key={order.id} order={order} />
+        </motion.button>
+        )
+       })}
+        <AnimatePresence
+        //Disable and initial animations on children that are present when the compent is first rendered
+        initial={false}
+        //Only render one component at a time.
+        //The exiting componenet will finish its exit animation before entering component is rendered
+        exitBeforeEnter={true}
+        //Fires whel all exiting nodes have completed animating out
+        
+        >
+         {detailOpen && <OrderDetail detailOpen={detailOpen} handleClose={close} />}
+         
+        </AnimatePresence>
+      

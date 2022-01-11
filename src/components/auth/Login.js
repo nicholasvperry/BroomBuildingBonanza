@@ -1,3 +1,4 @@
+//Changed navigate to welcome for splash screen
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
@@ -27,7 +28,7 @@ export const Login = (props) => {
                     localStorage.setItem("activeEmail", exists.email)
                     localStorage.setItem("activeUserAdmin", exists.admin)
                     props.setLoggedin(true)
-                    navigate("/") // change to navigate("/")
+                    navigate("/welcome") // change to navigate("/")
                 } else {
                     existDialog.current.showModal()
                 }
@@ -35,14 +36,14 @@ export const Login = (props) => {
     }
 
     return (
-        <main className="login">
-            <dialog className="dialog dialog--auth" ref={existDialog}>
+        <div className="login">
+            <dialog className="auth" ref={existDialog}>
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
             </dialog>
 
             <section className="loginPage">
-                <form className="login" onSubmit={handleLogin}>
+                <form className="loginForm" onSubmit={handleLogin}>
                     <h1>Nearly Headless Nick's Broom Building Bonanza</h1>
                     
                     <fieldset>
@@ -63,7 +64,7 @@ export const Login = (props) => {
             <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
             </section>
-        </main>
+        </div>
     )
 }
 

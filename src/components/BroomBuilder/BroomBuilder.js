@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState, useRef } from "react"
 import { TailTypeContext } from "../TailType/TailTypeProvider"
 import { WoodColorContext } from "../WoodColor/WoodColorProvider"
 import { WoodTypeContext } from "../WoodType/WoodTypeProvider"
@@ -23,7 +23,10 @@ import { PinkBirchBroom } from "../BroomImages/PinkBroomImages/PinkBirch"
 import { PinkFireBroom } from "../BroomImages/PinkBroomImages/PinkFire"
 import { PinkLightningBroom } from "../BroomImages/PinkBroomImages/PinkLightning"
 import { PinkStarBroom } from "../BroomImages/PinkBroomImages/PinkStar"
-
+import welcome from "../../images/fireWords.gif"
+import welcomeBackground from "../../images/black.jpg"
+import {useSpring, animated, useChain} from "react-spring"
+import {motion} from "framer-motion"
 
 
 export const BroomBuilder = () => {
@@ -41,10 +44,17 @@ export const BroomBuilder = () => {
     const [tailTypeForCart, setTailTypeForCart] = useState({
         tailType: 0
     })
-
+    
+    
    
     return (
         <>
+        
+        <div
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 3, delay: 4}}
+        >
         <h1 className="header">Nearly Headless Nick's Broom Building Bonanza</h1><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <div className="broomBuilderContainer">
         <div className="broomOptions">
@@ -75,7 +85,8 @@ export const BroomBuilder = () => {
 
         <div className="cart"><Cart  woodTypeForCart={woodTypeForCart} colorForCart={colorForCart} tailTypeForCart={tailTypeForCart}/></div>
         </div>
-
+        </div>
+        
         
         </>
     )

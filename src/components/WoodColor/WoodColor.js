@@ -42,7 +42,7 @@ export const WoodColor = ({setColorForCart}) => {
   
   const NextArrow = ({ onClick }) => {
     return (
-      <div className="arrow next" onClick={onClick}>
+      <div className="arrow next" onClick={onClick} style={{background: "#2e2b29"}}>
         <FaArrowRight />
       </div>
     );
@@ -50,7 +50,7 @@ export const WoodColor = ({setColorForCart}) => {
 
   const PrevArrow = ({ onClick }) => {
     return (
-      <div className="arrow prev" onClick={onClick}>
+      <div className="arrow prev" onClick={onClick} style={{background: "#2e2b29"}}>
         <FaArrowLeft />
       </div>
     );

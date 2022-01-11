@@ -40,7 +40,7 @@ export const TailType = ({setTailTypeForCart}) => {
 
   const NextArrow = ({ onClick }) => {
     return (
-      <div className="arrow next" onClick={onClick}>
+      <div className="arrow next" onClick={onClick} style={{background: "#2e2b29"}}>
         <FaArrowRight />
       </div>
     );
@@ -48,7 +48,7 @@ export const TailType = ({setTailTypeForCart}) => {
 
   const PrevArrow = ({ onClick }) => {
     return (
-      <div className="arrow prev" onClick={onClick}>
+      <div className="arrow prev" onClick={onClick} style={{background: "#2e2b29"}}>
         <FaArrowLeft />
       </div>
     );

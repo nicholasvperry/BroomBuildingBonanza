@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import Slider from "react-slick";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft, IoIosArrowForward } from "react-icons/fa";
 import "./WoodType.css"
 import { WoodTypeContext } from "./WoodTypeProvider";
+import left from "../../images/leftB.png"
+import right from "../../images/rightB.png"
 
 
 
@@ -45,7 +47,7 @@ export const WoodType = ({setWoodTypeForCart}) => {
 
   const NextArrow = ({ onClick }) => {
     return (
-      <div className="arrow next" onClick={onClick}>
+      <div className="arrow next" onClick={onClick} style={{background: "#2e2b29"}}>
         <FaArrowRight />
       </div>
     );
@@ -53,7 +55,7 @@ export const WoodType = ({setWoodTypeForCart}) => {
   
   const PrevArrow = ({ onClick }) => {
     return (
-      <div className="arrow prev" onClick={onClick}>
+      <div className="arrow prev" onClick={onClick} style={{background: "#2e2b29"}}>
         <FaArrowLeft />
       </div>
     );
