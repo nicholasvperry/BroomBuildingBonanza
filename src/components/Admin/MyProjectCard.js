@@ -3,23 +3,22 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react/cjs/react.development"
 import { OrderContext } from "../Orders/OrderProvider"
 import {StatusContext} from "../Status/StatusProvider"
-import { Box, Grommet, Layer, Button } from 'grommet'
+import {motion, AnimatePresence, m} from "framer-motion"
+import { ProjectCardStatus } from "./StatusUpdate"
 
 
 
 export const MyProjectCard = ({order}) => {
-  const {orders, getOrders, updateOrderStatus} = useContext(OrderContext)
+  const {orders, getOrders, updateOrderStatus, returnOrder} = useContext(OrderContext)
   const {status, getStatus} = useContext(StatusContext)
-  const navigate = useNavigate()
+
   //wait for data before button is active
   const [isLoading, setIsLoading] = useState(true)
+ 
   
   const [orderStatus, setOrderStatus] = useState({
     orderStatus: order.status.id
   })
-
-  //State for modal
-  const [show, setShow] = useState()
 
   useEffect(() => {
       getOrders()
@@ -30,8 +29,20 @@ export const MyProjectCard = ({order}) => {
     const handleStatusUpdate = (statusId) => {
       updateOrderStatus(order.id, +statusId)
       .then(getOrders)
-      .then(setShow(false))
   }
+
+  //To patch order. Params are order id and current user
+  const handleReturnOrder = () => {
+    setIsLoading(true)
+    returnOrder(order.id)
+    .then(getOrders)
+}
+
+  //set state for the detail modal
+  const [detailOpen, setDetailOpen] = useState(false)
+  const close = () => setDetailOpen(false)
+  const open = () => setDetailOpen(true)
+
 
 
   let currentTimestamp = order.orderDate
@@ -43,6 +54,7 @@ export const MyProjectCard = ({order}) => {
   return (
   <>
   <div className="myProjectCards projectCards" id={order.id}>
+  <motion.div onClick={close}>
   <div>Customer Name: {order.user.name}</div>
   <div>Order Number: {order.id}</div>
   <div>Wood Type: {order.woodType.name}</div>
@@ -51,35 +63,34 @@ export const MyProjectCard = ({order}) => {
   <div>Note: {order.note}</div>
   <div>Order Date: {date}</div>
   <label htmlFor="status">Status: {order.status.name}</label><br></br>
-  <div className="updateModal">
-  <Box>  
-    <Button className="button" label="Update Status" onClick={() => setShow(true)} />
-    {show && (
-      <Layer
-      onEsc={() => setShow(false)}
-      onClickOutside={() => setShow(false)}>
+  </motion.div>
+  <div>
+    <motion.button
+    whileHover={{scale: 1.1}}
+    whileTap={{scale: 0.9}}
+    className="editButton"
+    onClick={() => (detailOpen ? close() : open())}
+    >
+
+    <div className="editButton button">Edit Status</div>
+
+    </motion.button>
+
+    <AnimatePresence
+      //Disable and initial animations on children that are present when the compent is first rendered
+      initial={false}
+      //Only render one component at a time.
+      //The exiting componenet will finish its exit animation before entering component is rendered
+      exitBeforeEnter={true}
+      //Fires whel all exiting nodes have completed animating out
       
-      <fieldset className="updateModal">
-    <div className="status">
-      <label htmlFor="status">Status: {order.status.name}</label><br></br>
-      <select onChange={e=> {
-        handleStatusUpdate(e.target.value)
-      }} name="statusId" id="orderStatus" className="statusDropDown" >
-        <option >Update Status</option>
-        {status.map(s => (
-          <option key={s.id} value={s.id}>
-            {s.name}
-          </option>
-        ))}
-          </select>
-        </div>
-      </fieldset>
-      </Layer>
+      >
+      {detailOpen && <ProjectCardStatus detailOpen={detailOpen} handleClose={close} order={order} />}
+      <button className="button" onClick={handleReturnOrder}>Return Project</button>
         
-    )}
-  
-  </Box>
-  </div>
+    </AnimatePresence>
+
+    </div>
   
   </div>
   </>

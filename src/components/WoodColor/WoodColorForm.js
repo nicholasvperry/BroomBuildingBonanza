@@ -131,7 +131,7 @@ export const WoodColorForm = () => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="woodColorName">Color name: </label>
-          <input type="text" id="woodColorName" name="name" required autoFocus className="form-control"
+          <input type="text" id="woodColorName" name="name" required autoFocus
           placeholder="Color"
           onChange={handleControlledInputChange}
           defaultValue={woodColor.name}/>
@@ -143,7 +143,7 @@ export const WoodColorForm = () => {
           <label htmlFor="price">Color Price: $</label>
           <input type="number" id="price" name="price" 
           onChange={handleControlledInputChange}
-          required className="form-control"
+          required
           placeholder="Price"            
           defaultValue={woodColor.price}/>
         </div>
@@ -152,7 +152,7 @@ export const WoodColorForm = () => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="woodColorImage">Color Image Location: </label>
-          <input type="text" id="woodColorImage" name="image" required className="form-control"
+          <input type="text" id="woodColorImage" name="image" required
           placeholder="Tail Image Location"
           onChange={handleControlledInputChange}
           defaultValue={woodColor.image}/>

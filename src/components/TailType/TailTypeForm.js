@@ -127,36 +127,36 @@ export const TailTypeForm = () => {
         <>
         <form className="tailTypeForm">
         <h2 className="tailTypeFormTitle"> {tailTypeId ? "Edit Tail Type" : "New Tail Type"}</h2>
-        <fieldset>
-          <div className="form-group">
+        <div>
+          <div className="tTypeName">
             <label htmlFor="tailTypeName">Tail name: </label>
-            <input type="text" id="tailTypeName" name="name" required autoFocus className="form-control"
+            <input type="text" id="tailTypeName" name="name" required autoFocus 
             placeholder="Tail Type name"
             onChange={handleControlledInputChange}
             defaultValue={tailType.name}/>
           </div>
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <div className="form-group">
+        <div>
+          <div className="tTypePrice">
             <label htmlFor="price">Tail Type Price: $</label>
             <input type="number" id="price" name="price" 
             onChange={handleControlledInputChange}
-            required className="form-control"
+            required 
             placeholder="Price"            
             defaultValue={tailType.price}/>
           </div>
-        </fieldset>
+        </div>
 
-        <fieldset>
+        <div>
           <div className="form-group">
             <label htmlFor="tailTypeImage">Tail Image Location: </label>
-            <input type="text" id="tailTypeImage" name="image" required className="form-control"
+            <input type="text" id="tailTypeImage" name="image" required 
             placeholder="Tail Image Location"
             onChange={handleControlledInputChange}
             defaultValue={tailType.image}/>
           </div>
-        </fieldset>
+        </div>
 
 
         

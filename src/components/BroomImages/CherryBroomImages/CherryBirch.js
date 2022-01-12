@@ -27,7 +27,7 @@ const BroomImageSettings = ({ ...props }) => {
       <mesh
         geometry={nodes.MainStick.geometry}
         material={materials['lambert2.001']}
-        rotation={[1.83, 0, 9]}
+        rotation={[1.3, 0, 9]}
         position={[0, -1.5, 0]}
         scale={0.35}
       />

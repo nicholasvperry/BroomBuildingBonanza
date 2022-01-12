@@ -132,7 +132,7 @@ export const WoodTypeForm = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="woodTypeName">Wood name: </label>
-            <input type="text" id="woodTypeName" name="name" required autoFocus className="form-control"
+            <input type="text" id="woodTypeName" name="name" required autoFocus 
             placeholder="Wood Type name"
             onChange={handleControlledInputChange}
             defaultValue={woodType.name}/>
@@ -144,7 +144,7 @@ export const WoodTypeForm = () => {
             <label htmlFor="price">Wood Type Price: $</label>
             <input type="number" id="price" name="price" 
             onChange={handleControlledInputChange}
-            required className="form-control"
+            required 
             placeholder="Price"            
             defaultValue={woodType.price}/>
           </div>
@@ -153,7 +153,7 @@ export const WoodTypeForm = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="woodTypeImage">Wood Image Location: </label>
-            <input type="text" id="woodTypeImage" name="image" required className="form-control"
+            <input type="text" id="woodTypeImage" name="image" required 
             placeholder="Wood Type Image Location"
             onChange={handleControlledInputChange}
             defaultValue={woodType.image}/>

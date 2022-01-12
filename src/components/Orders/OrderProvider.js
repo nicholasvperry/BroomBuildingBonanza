@@ -57,6 +57,18 @@ export const OrdersProvider = (props) => {
       }
       
       //Used to change adminUserId to current user
+      const returnOrder = (orderId) => {
+        return fetch(`http://localhost:8088/orders/${orderId}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({adminUserId: 0})
+          })
+            .then(getOrders)
+      }
+      
+      //Used to change adminUserId to current user
       const updateOrderStatus = (orderId, status) => {
         return fetch(`http://localhost:8088/orders/${orderId}`, {
             method: "PATCH",
@@ -95,7 +107,7 @@ export const OrdersProvider = (props) => {
     */
     return (
         <OrderContext.Provider value={{
-            orders, getOrders, addOrder, getOrderById, updateOrder, deleteOrder, searchTerms, setSearchTerms, takeOrder, updateOrderStatus, updateNote
+            orders, getOrders, addOrder, getOrderById, updateOrder, deleteOrder, searchTerms, setSearchTerms, takeOrder, updateOrderStatus, updateNote, returnOrder
         }}>
             {props.children}
         </OrderContext.Provider>
