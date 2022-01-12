@@ -2,6 +2,7 @@ import React from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react/cjs/react.development"
 import { OrderContext } from "../Orders/OrderProvider"
+import {motion} from "framer-motion"
 
 
 export const ProjectCard = ({order}) => {
@@ -36,7 +37,10 @@ export const ProjectCard = ({order}) => {
     <div>Tail Type: {order.tailType.name}</div>
     <div>Note: {order.note}</div>
     <div>Order Date: {date}</div>
-    <button className="button" onClick={handleTakeOrder}>Take Project</button>
+    <motion.button
+      whileHover={{scale: 1.1}}
+      whileTap={{scale: 0.9}} 
+      className="button" onClick={handleTakeOrder}>Take Project</motion.button>
 
     </div>
     </>

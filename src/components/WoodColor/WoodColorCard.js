@@ -3,6 +3,7 @@ import React, {useState, useEffect, useContext} from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import {WoodColorContext} from "./WoodColorProvider"
 import Swal from 'sweetalert2';
+import {motion} from "framer-motion"
 
 export const WoodColorCard = ({woodColor}) => {
     const {deleteWoodColor, getWoodColorById} = useContext(WoodColorContext)
@@ -43,13 +44,18 @@ export const WoodColorCard = ({woodColor}) => {
     return (
     <section className="productCard">
         <h3>{woodColor.name}</h3>
-        <div>Price: {woodColor.price}</div>
+        <div>Price: ${woodColor.price}</div>
         {/* <img key={woodColor.id} src={woodColor.image} alT={woodColor.name} /> */}
 
-        <button onClick={() => {
-    navigate(`/woodcolors/edit/${woodColor.id}`)}}
-    >Edit</button>
-    <button onClick={handleDelete}>Delete Type</button>
+        <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} onClick={() => {
+        navigate(`/woodcolors/edit/${woodColor.id}`)}}
+        >Edit</motion.button>
+        <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        onClick={handleDelete}>Delete Type</motion.button>
     </section>
 
     )

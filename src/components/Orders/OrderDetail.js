@@ -22,6 +22,7 @@ import { PinkLightningBroom } from "../BroomImages/PinkBroomImages/PinkLightning
 import { PinkStarBroom } from "../BroomImages/PinkBroomImages/PinkStar"
 import { Backdrop } from "./OrderBackDrop"
 
+
 export const OrderDetail = ({ order, handleClose }) => {
     const { orders, getOrders, getOrderById, updateNote } = useContext(OrderContext)
     //wait for data before button is active
@@ -66,7 +67,9 @@ export const OrderDetail = ({ order, handleClose }) => {
     if (order.statusId === 7 || order.statusId === 6) {
         editButton = ""
     } else {
-        editButton = <button className="button" onClick={handleEditNote}>Edit Note</button>
+        editButton = <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} className="button" onClick={handleEditNote}>Edit Note</motion.button>
     }
     
     //Modal Animation
@@ -142,7 +145,9 @@ export const OrderDetail = ({ order, handleClose }) => {
                 
 
             </div>
-            <button onClick={handleClose}>Close</button>
+            <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} onClick={handleClose}>Close</motion.button>
             </motion.div>
             </Backdrop>
         </>

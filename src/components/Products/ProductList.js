@@ -8,6 +8,7 @@ import { WoodColorCard } from "../WoodColor/WoodColorCard"
 import { WoodTypeContext } from "../WoodType/WoodTypeProvider"
 import { WoodTypeCard } from "../WoodType/WoodTypeCard"
 import "./Product.css"
+import {motion} from "framer-motion"
 
 
 export const ProductList = () => {
@@ -31,9 +32,11 @@ export const ProductList = () => {
       
       <div className="tailTypesCards">  
       <h1>Tail Types</h1>
-      <button onClick={() => navigate("/tailtypes/create")}>
+      <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} onClick={() => navigate("/tailtypes/create")}>
             New Tail Type
-        </button>
+        </motion.button>
         {/* map through tail types and return all tail types in the TailTypeCard */}
         <div className="tailTypes">
       
@@ -49,9 +52,10 @@ export const ProductList = () => {
 
     <div className="woodTypeCards">  
     <h1>Wood Types</h1>
-    <button onClick={() => navigate("/woodtypes/create")}>
-          New Wood Type
-      </button>
+    <motion.button
+      whileHover={{scale: 1.1}}
+      whileTap={{scale: 0.9}} onClick={() => navigate("/woodtypes/create")}>New Wood Type
+      </motion.button>
 
       {/* map through wood types and return all wood types in the WoodTypeCard */}
       <div className="woodTypes">
@@ -69,9 +73,12 @@ export const ProductList = () => {
 
     <div className="woodColorCards">  
     <h1>Wood Colors</h1>
-    <button onClick={() => navigate("/woodcolors/create")}>
+    <motion.button
+      whileHover={{scale: 1.1}}
+      whileTap={{scale: 0.9}}
+      onClick={() => navigate("/woodcolors/create")}>
           New Wood Color
-      </button>
+      </motion.button>
 
       {/* map through wood colors and return all wood colors in the WoodColorCard */}
       <div className="woodColors">

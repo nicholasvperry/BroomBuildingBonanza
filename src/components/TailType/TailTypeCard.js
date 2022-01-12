@@ -3,6 +3,7 @@ import React, {useEffect, useContext} from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import {TailTypeContext} from "./TailTypeProvider";
 import Swal from 'sweetalert2';
+import {motion} from "framer-motion"
 
 export const TailTypeCard = ({tailType}) => {
     const {deleteTailType, getTailTypeById} = useContext(TailTypeContext)
@@ -41,13 +42,18 @@ export const TailTypeCard = ({tailType}) => {
     return (
     <section className="productCard">
         <h3>{tailType.name}</h3>
-        <div>Price: {tailType.price}</div>
+        <div>Price: ${tailType.price}</div>
         {/* <img key={tailType.id} src={tailType.image} alT={tailType.name} /> */}
 
-        <button onClick={() => {
-    navigate(`/tailtypes/edit/${tailType.id}`)}}
-    >Edit</button>
-    <button onClick={handleDelete}>Delete Type</button>
+        <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} onClick={() => {
+        navigate(`/tailtypes/edit/${tailType.id}`)}}
+        >Edit</motion.button>
+
+        <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} onClick={handleDelete}>Delete Type</motion.button>
     </section>
 
     )

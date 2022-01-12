@@ -4,6 +4,7 @@ import React, {useEffect, useContext} from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import {WoodTypeContext} from "./WoodTypeProvider"
 import Swal from 'sweetalert2';
+import {motion} from "framer-motion"
 
 
 export const WoodTypeCard = ({woodType}) => {
@@ -43,13 +44,18 @@ export const WoodTypeCard = ({woodType}) => {
     return (
     <section className="productCard">
         <h3>{woodType.name}</h3>
-        <div>Price: {woodType.price}</div>
+        <div>Price: ${woodType.price}</div>
         {/* <img key={woodType.id} src={woodType.image} alT={woodType.name} /> */}
 
-        <button onClick={() => {
-    navigate(`/woodtypes/edit/${woodType.id}`)}}
-    >Edit</button>
-    <button onClick={handleDelete}>Delete Type</button>
+        <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}} onClick={() => {
+        navigate(`/woodtypes/edit/${woodType.id}`)}}
+        >Edit</motion.button>
+    <motion.button
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.9}}
+        onClick={handleDelete}>Delete Type</motion.button>
     </section>
 
     )
