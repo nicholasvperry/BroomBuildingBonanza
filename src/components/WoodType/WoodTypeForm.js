@@ -12,7 +12,7 @@ export const WoodTypeForm = () => {
     const [woodType, setWoodType] = useState({
         name: "",
         price: "",
-        image: "n/a"
+        image:""
     })
 
     //wait for data before button is active
@@ -76,18 +76,24 @@ export const WoodTypeForm = () => {
         if (woodTypeId){
           //PUT - update
           updateWoodType({
-              id: woodType.id,
+              id: +woodType.id,
               name: woodType.name,
-              price: woodType.price,
-              image: woodType.image
+              price: +woodType.price,
+              image: woodType.image,
+              speed: +woodType.speed,
+              acceleration: +woodType.acceleration,
+              weight: +woodType.weight
             })
             .then(() => navigate(`/products`))
           }else {
             //POST - add
             addWoodType({
                 name: woodType.name,
-                price: woodType.price,
-                typeId: woodType.typeId
+                price: +woodType.price,
+                image: woodType.image,
+                speed: +woodType.speed,
+                acceleration: +woodType.acceleration,
+                weight: +woodType.weight
             })
             .then(() => navigate("/products"))
           }
@@ -132,7 +138,7 @@ export const WoodTypeForm = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="woodTypeName">Wood name: </label>
-            <input type="text" id="woodTypeName" name="name" required autoFocus className="form-control"
+            <input type="text" id="woodTypeName" name="name" required autoFocus 
             placeholder="Wood Type name"
             onChange={handleControlledInputChange}
             defaultValue={woodType.name}/>
@@ -144,7 +150,7 @@ export const WoodTypeForm = () => {
             <label htmlFor="price">Wood Type Price: $</label>
             <input type="number" id="price" name="price" 
             onChange={handleControlledInputChange}
-            required className="form-control"
+            required 
             placeholder="Price"            
             defaultValue={woodType.price}/>
           </div>
@@ -153,11 +159,39 @@ export const WoodTypeForm = () => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="woodTypeImage">Wood Image Location: </label>
-            <input type="text" id="woodTypeImage" name="image" required className="form-control"
+            <input type="text" id="woodTypeImage" name="image" required 
             placeholder="Wood Type Image Location"
             onChange={handleControlledInputChange}
             defaultValue={woodType.image}/>
           </div>
+          <div>
+          <div className="form-group">
+            <label htmlFor="woodTypeSpeed">Wood Type Speed: </label>
+            <input type="number" id="woodTypeSpeed" name="speed" required 
+            placeholder="Wood Type Speed"
+            onChange={handleControlledInputChange}
+            defaultValue={woodType.speed}/>
+          </div>
+        </div>
+        
+        <div>
+          <div className="form-group">
+            <label htmlFor="woodTypeAcceleration">Wood Type Acceleration: </label>
+            <input type="number" id="woodTypeAcceleration" name="acceleration" required 
+            placeholder="Wood Type Acceleration"
+            onChange={handleControlledInputChange}
+            defaultValue={woodType.acceleration}/>
+          </div>
+        </div>
+        <div>
+          <div className="form-group">
+            <label htmlFor="woodTypeWeight">Wood Type Weight: </label>
+            <input type="number" id="woodTypeWeight" name="weight" required 
+            placeholder="Wood Type Weight"
+            onChange={handleControlledInputChange}
+            defaultValue={woodType.weight}/>
+          </div>
+        </div>
         </fieldset>
 
 
@@ -169,6 +203,9 @@ export const WoodTypeForm = () => {
             handleSaveProduct()
           }}>
         {woodTypeId ? <>Save Type</> : <>Add Type</>}</button>
+
+        <button className="btn btn-primary" onClick={() => {
+        navigate(`/products`)}}>Cancel</button>
       </form>
         
         </>

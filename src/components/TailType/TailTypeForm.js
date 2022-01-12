@@ -74,18 +74,24 @@ export const TailTypeForm = () => {
         if (tailTypeId){
           //PUT - update
           updateTailType({
-              id: tailType.id,
+              id: +tailType.id,
               name: tailType.name,
-              price: tailType.price,
-              image: tailType.image
+              price: +tailType.price,
+              image: tailType.image,
+              speed: +tailType.speed,
+              acceleration: +tailType.acceleration,
+              weight: +tailType.weight
             })
             .then(() => navigate(`/products`))
           }else {
             //POST - add
             addTailType({
                 name: tailType.name,
-                price: tailType.price,
-                typeId: tailType.typeId
+                price: +tailType.price,
+                image: tailType.image,
+                speed: +tailType.speed,
+                acceleration: +tailType.acceleration,
+                weight: +tailType.weight
             })
             .then(() => navigate("/products"))
           }
@@ -127,36 +133,65 @@ export const TailTypeForm = () => {
         <>
         <form className="tailTypeForm">
         <h2 className="tailTypeFormTitle"> {tailTypeId ? "Edit Tail Type" : "New Tail Type"}</h2>
-        <fieldset>
-          <div className="form-group">
+        <div>
+          <div className="tTypeName">
             <label htmlFor="tailTypeName">Tail name: </label>
-            <input type="text" id="tailTypeName" name="name" required autoFocus className="form-control"
+            <input type="text" id="tailTypeName" name="name" required autoFocus 
             placeholder="Tail Type name"
             onChange={handleControlledInputChange}
             defaultValue={tailType.name}/>
           </div>
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <div className="form-group">
+        <div>
+          <div className="tTypePrice">
             <label htmlFor="price">Tail Type Price: $</label>
             <input type="number" id="price" name="price" 
             onChange={handleControlledInputChange}
-            required className="form-control"
+            required 
             placeholder="Price"            
             defaultValue={tailType.price}/>
           </div>
-        </fieldset>
+        </div>
 
-        <fieldset>
+        <div>
           <div className="form-group">
             <label htmlFor="tailTypeImage">Tail Image Location: </label>
-            <input type="text" id="tailTypeImage" name="image" required className="form-control"
+            <input type="text" id="image" name="image" required 
             placeholder="Tail Image Location"
             onChange={handleControlledInputChange}
             defaultValue={tailType.image}/>
           </div>
-        </fieldset>
+        </div>
+        
+        <div>
+          <div className="form-group">
+            <label htmlFor="tailTypeSpeed">Tail Speed: </label>
+            <input type="number" id="tailTypeSpeed" name="speed" required 
+            placeholder="Tail Speed"
+            onChange={handleControlledInputChange}
+            defaultValue={tailType.speed}/>
+          </div>
+        </div>
+        
+        <div>
+          <div className="form-group">
+            <label htmlFor="tailTypeAcceleration">Tail Acceleration: </label>
+            <input type="number" id="tailTypeAcceleration" name="acceleration" required 
+            placeholder="Tail Acceleration"
+            onChange={handleControlledInputChange}
+            defaultValue={tailType.acceleration}/>
+          </div>
+        </div>
+        <div>
+          <div className="form-group">
+            <label htmlFor="tailTypeWeight">Tail Weight: </label>
+            <input type="number" id="tailTypeWeight" name="weight" required 
+            placeholder="Tail Weight"
+            onChange={handleControlledInputChange}
+            defaultValue={tailType.weight}/>
+          </div>
+        </div>
 
 
         
@@ -166,7 +201,10 @@ export const TailTypeForm = () => {
             event.preventDefault() // Prevent browser from submitting the form and refreshing the page
             handleSaveProduct()
           }}>
-        {tailTypeId ? <>Save Type</> : <>Add Type</>}</button>
+        {tailTypeId ? <>Save Type</> : <>Add Tail Type</>}</button>
+
+        <button className="btn btn-primary" onClick={() => {
+        navigate(`/products`)}}>Cancel</button>
       </form>
         
         </>

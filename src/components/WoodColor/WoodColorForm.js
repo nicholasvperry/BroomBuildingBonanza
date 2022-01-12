@@ -75,18 +75,24 @@ export const WoodColorForm = () => {
       if (woodColorId){
         //PUT - update
         updateWoodColor({
-            id: woodColor.id,
+            id: +woodColor.id,
             name: woodColor.name,
-            price: woodColor.price,
-            image: woodColor.image
+            price: +woodColor.price,
+            image: woodColor.image,
+            speed: +woodColor.speed,
+            acceleration: +woodColor.acceleration,
+            weight: +woodColor.weight
           })
           .then(() => navigate(`/products`))
         }else {
           //POST - add
           addWoodColor({
               name: woodColor.name,
-              price: woodColor.price,
-              typeId: woodColor.typeId
+              price: +woodColor.price,
+              image: woodColor.image,
+              speed: +woodColor.speed,
+              acceleration: +woodColor.acceleration,
+              weight: +woodColor.weight
           })
           .then(() => navigate("/products"))
         }
@@ -131,7 +137,7 @@ export const WoodColorForm = () => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="woodColorName">Color name: </label>
-          <input type="text" id="woodColorName" name="name" required autoFocus className="form-control"
+          <input type="text" id="name" name="name" required autoFocus
           placeholder="Color"
           onChange={handleControlledInputChange}
           defaultValue={woodColor.name}/>
@@ -143,7 +149,7 @@ export const WoodColorForm = () => {
           <label htmlFor="price">Color Price: $</label>
           <input type="number" id="price" name="price" 
           onChange={handleControlledInputChange}
-          required className="form-control"
+          required
           placeholder="Price"            
           defaultValue={woodColor.price}/>
         </div>
@@ -152,11 +158,43 @@ export const WoodColorForm = () => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="woodColorImage">Color Image Location: </label>
-          <input type="text" id="woodColorImage" name="image" required className="form-control"
-          placeholder="Tail Image Location"
+          <input type="text" id="woodColorImage" name="image" required
+          placeholder="Wood Color Image Location"
           onChange={handleControlledInputChange}
           defaultValue={woodColor.image}/>
         </div>
+
+        
+
+        <div>
+          <div className="form-group">
+            <label htmlFor="woodColorSpeed">Wood Color Speed: </label>
+            <input type="number" id="woodColorSpeed" name="speed" required 
+            placeholder="Wood Color Speed"
+            onChange={handleControlledInputChange}
+            defaultValue={woodColor.speed}/>
+          </div>
+        </div>
+        
+        <div>
+          <div className="form-group">
+            <label htmlFor="woodColorAcceleration">Wood Color Acceleration: </label>
+            <input type="number" id="woodColorAcceleration" name="acceleration" required 
+            placeholder="Wood Color Acceleration"
+            onChange={handleControlledInputChange}
+            defaultValue={woodColor.acceleration}/>
+          </div>
+        </div>
+        <div>
+          <div className="form-group">
+            <label htmlFor="woodColorWeight">Wood Color Weight: </label>
+            <input type="number" id="woodColorWeight" name="weight" required 
+            placeholder="Wood Color Weight"
+            onChange={handleControlledInputChange}
+            defaultValue={woodColor.weight}/>
+          </div>
+        </div>
+
       </fieldset>
 
 
@@ -168,6 +206,9 @@ export const WoodColorForm = () => {
           handleSaveProduct()
         }}>
       {woodColorId ? <>Save Type</> : <>Add Type</>}</button>
+      
+      <button className="btn btn-primary" onClick={() => {
+        navigate(`/products`)}}>Cancel</button>
     </form>
       
       </>

@@ -46,24 +46,26 @@ export const Login = (props) => {
                 <form className="loginForm" onSubmit={handleLogin}>
                     <h1>Nearly Headless Nick's Broom Building Bonanza</h1>
                     
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                    
+                        <div htmlFor="inputEmail"> Email address </div>
                         <input ref={email} type="email"
                             id="email"
-                            className="form-control"
+                            className="emailInput"
                             placeholder="Email address"
                             required autoFocus />
-                    </fieldset>
+                    
                     <fieldset>
                         <button type="submit">
                             Sign in
                         </button>
                     </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
+
+                    <section className="link--register">
                 <Link to="/register">Not a member yet?</Link>
             </section>
+                </form>
+            </section>
+            
         </div>
     )
 }

@@ -74,17 +74,15 @@ export const BroomBuilder = () => {
     return (
         <>
         
-        <div
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{duration: 3, delay: 4}}
-        >
+        
         <h1 className="header">Nearly Headless Nick's Broom Building Bonanza</h1><br></br><br></br><br></br><br></br><br></br><br></br>
         <div className="broomBuilderContainer">
         <div className="broomOptions">
             <div className="woodType"><WoodType setWoodTypeForCart={setWoodTypeForCart} /></div><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
            <div className="woodColor"><WoodColor setColorForCart={setColorForCart} /></div><br></br><br></br><br></br><br></br><br></br>
            <div className="tailType"><TailType setTailTypeForCart={setTailTypeForCart} /></div><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        
+        
         </div>
         
         
@@ -109,27 +107,26 @@ export const BroomBuilder = () => {
         {colorForCart === 4 && tailTypeForCart === 4 && <GoldLightningBroom />}
         </div>
 
-        <div className="progressBars">
-        <div>Speed</div>
-        <ProgressBar now={totalSpeed}/>
-        <div>Acceleration</div>
-        <ProgressBar now={totalAcceleration}/>
-        <div>Weight</div>
-        <ProgressBar now={totalWeight}/>
-        </div>
+        
 
         </div>
         
 
         <div className="cart"><Cart  woodTypeForCart={woodTypeForCart} colorForCart={colorForCart} tailTypeForCart={tailTypeForCart}/>
-        </div>
+        </div>   
 
         
-        
         </div>
-        
+            
+            <div className="progressBars">
+            <div>Speed</div>
+            <ProgressBar now={totalSpeed}/>
+            <div>Acceleration</div>
+            <ProgressBar now={totalAcceleration}/>
+            <div>Weight</div>
+            <ProgressBar now={totalWeight}/>
+
         </div>
-        
         
         </>
     )
