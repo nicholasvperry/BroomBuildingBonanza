@@ -1,6 +1,6 @@
 Have you ever been sitting there wishing you had a magic broom? Broom Building Bonanza does just that. It is a fun app that allows users to custom build their own flying brooms! While building your broom you will see a custom 3D model of your broom, as well as the speed, acceleration, and weight of the broom. Customers are also able to send a custom letter along with their broom if it is being sent as a gift. Customers can see past purchases, including checking the status of a purchase, and updating the note if needed until the day the broom is ready to ship. As an employee you can view all open orders. Orders are sorted by order date so the oldest orders can be built first. Employees can take on open projects and update the status of the project as they build the broom, allowing the customers to see the progress as the broom is being built. This app was built with React and custom CSS styles. The app also uses JSON-server which is a mock API to track all orders, customer, and products available.
 
-I have made a short demo where you can checkout the app [by clicking here!](https://github.com/facebook/create-react-app)
+I have made a short demo where you can checkout the app [by clicking here!](https://www.loom.com/share/13c11485b2894fdeaa7bad841a6ed771)
 
 # Getting Started with Create React App
 
